@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Simulando un sismógrafo | El pulsador y el potenciómetro </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Sergio Arciénaga" />
+<meta name="generator" content="eXeLearning 2.9 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site exe-search-bar" id="exe-node-18"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">El pulsador y el potenciómetro</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Inicio</a></li>
+   <li><a href="el_uso_del_pulsador.html" class="daddy">El uso del pulsador</a>
+   <ul class="other-section">
+      <li><a href="pulsador_con_doble_funcin.html" class="no-ch">Pulsador con doble función</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="el_potencimetro.html" class="current-page-parent daddy">El potenciómetro</a>
+   <ul>
+      <li id="active"><a href="simulando_un_sismgrafo.html" class="active no-ch">Simulando un sismógrafo</a></li>
+   </ul>
+   </li>
+   <li><a href="ponchobot_defiende_la_frontera_norte.html" class="daddy">PonchoBot defiende la frontera norte</a>
+   <ul class="other-section">
+      <li><a href="partes_del_juego.html" class="no-ch">Partes del juego</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="el_potencimetro.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><span class="page-counter">Página <strong>5</strong> de <strong>7</strong></span> <span class="sep">| </span><a href="ponchobot_defiende_la_frontera_norte.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Simulando un sismógrafo</h1></header>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id51">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">El potenciómetro para simular fenómenos naturales</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta51_127_2" class="block iDevice_content">
+<div class="exe-text"><p>Podemos usar el potenciómetro de <span style="color: #ff9900;"><strong>PonchoBot</strong></span> para ingresar <strong>valores analógicos</strong> (<em>entre 0 y 823</em>), a través de los pines analógicos de <strong>Arduino Nano</strong> (en nuestro caso <em>A4</em>). En este caso vamos a simular el ingreso de valores provenientes de un movimiento sísmico, para ser graficados en <strong>Pictoblox. </strong>Como siempre, alentamos <strong>la creación de nuestros propios prototipos</strong>, a partir de los ejemplos planteados en esta propuesta.</p>
+<p style="text-align: center;"><video width="456" height="456" controls="controls">
+<source src="Sismografo_con_PonchoBot_Linkedin.mp4" type="video/mp4" /></video></p>
+<p><strong>Para ello vamos a poner un escenario de cuadrícula con una zona de inicio, y crear dos objetos/personajes: <span style="color: #ff0000;">un punto rojo</span> y un <span style="color: #339966;">botón de stop</span>.</strong></p>
+<table border="1" style="height: 246px; width: 87.0619%; margin-left: auto; margin-right: auto;" height="256">
+<tbody>
+<tr style="height: 246px;">
+<td style="width: 43.6298%; height: 246px;"><img src="img1.2.png" width="337" height="211" alt="" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 53.4856%; text-align: center; height: 246px;"><img src="img2.3.png" width="337" height="214" alt="" /></td>
+</tr>
+</tbody>
+</table>
+<div class="exe-fx exe-accordion" style="text-align: center;">
+<h2 style="text-align: left;">1.- El Punto</h2>
+<p style="text-align: left;">En el objeto <span style="color: #ff0000;"><strong>punto</strong></span>, vamos a programar <em>"la huella"</em> que va dejando en pantalla, cada valor que ingresa por el <strong>pin A4. </strong>Para ello nos vamos a valer de la <strong>creación de clones </strong>y su ubicación en las coordenadas<strong> x,y. </strong>El valor de<strong> x </strong>será constante y el valor de<strong> y </strong>dependerá de lo leído en el <strong>pin A4 </strong><em>(valores que irán cambiando a medida que se gire la perilla del potenciómetro). Sus bloques de programa son:</em></p>
+<p style="text-align: left;"><img src="img0.2.png" width="824" height="799" alt="" /></p>
+<h2 style="text-align: left;">2.- El Button1</h2>
+<p style="text-align: left;">En el objeto <strong><span style="color: #008000;">Button1</span> </strong>vamos a dar la orden para detener el ingreso de valores y hacer los cálculos para la obtención de los valores máximo y mínimo. Para ello vamos a crear <span style="background-color: #ff9900; color: #ffffff;">las variables</span> <strong>Máximo</strong> - <strong>Mínimo</strong> - <strong>n</strong> y una <span style="background-color: #993300; color: #ffffff;">lista</span> <strong>Nivel de vibración, </strong>donde se irán acumulando los valores recibidos del potenciómetro. Sus bloques de programa son:</p>
+<p style="text-align: left;"><img src="img3.3.png" width="835" height="554" alt="" /></p>
+<p style="text-align: left;">Se pueden obtener más valores de interés, como por ejemplo: promedio, amplitud (diferencia entre el Máximo y el Mínimo), etc. También, los valores de la <span style="background-color: #993300; color: #ffffff;">lista</span> <strong>Nivel de vibración</strong>, se pueden exportar y almacenar en un archivo txt, para luego ser usados en una planilla de cálculo.</p>
+<table border="1" style="width: 76.0677%; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="width: 21.3483%;"><img src="img4.2.png" width="158" height="131" alt="" style="float: left;" /></td>
+<td style="width: 54.7223%;"><img src="img5.1.png" width="438" height="246" alt="" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="text-align: left;"></p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FileAttachIdeviceInc em_iDevice em_iDevice_assignment" id="id52">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Fichero adjunto</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta52_82" class="block iDevice_content">
+<p><a href="Descargar programa de ejemplo" title="[.sb3 - 92 KB]">Descargar programa de ejemplo</a><span class="exe-link-data file-size"> (.sb3 - 92 <abbr title="KiloBytes" lang="en">KB</abbr>)</span></p>
+</div>
+<ul class='exeFileList'></ul></div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="el_potencimetro.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><span class="page-counter">Página <strong>5</strong> de <strong>7</strong></span> <span class="sep">| </span><a href="ponchobot_defiende_la_frontera_norte.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

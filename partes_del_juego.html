@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Partes del juego | El pulsador y el potenciómetro </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Sergio Arciénaga" />
+<meta name="generator" content="eXeLearning 2.9 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site exe-search-bar" id="exe-node-16"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">El pulsador y el potenciómetro</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Inicio</a></li>
+   <li><a href="el_uso_del_pulsador.html" class="daddy">El uso del pulsador</a>
+   <ul class="other-section">
+      <li><a href="pulsador_con_doble_funcin.html" class="no-ch">Pulsador con doble función</a></li>
+   </ul>
+   </li>
+   <li><a href="el_potencimetro.html" class="daddy">El potenciómetro</a>
+   <ul class="other-section">
+      <li><a href="simulando_un_sismgrafo.html" class="no-ch">Simulando un sismógrafo</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="ponchobot_defiende_la_frontera_norte.html" class="current-page-parent daddy">PonchoBot defiende la frontera norte</a>
+   <ul>
+      <li id="active"><a href="partes_del_juego.html" class="active no-ch">Partes del juego</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="ponchobot_defiende_la_frontera_norte.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><span class="page-counter">Página <strong>7</strong> de <strong>7</strong></span>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Partes del juego</h1></header>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id47">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">La programación</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta47_129_2" class="block iDevice_content">
+<div class="exe-text"><p><span style="color: #ff0000;"><strong>El juego</strong></span> consiste en eliminar al <strong>invasor</strong> que desciende en forma aleatoria por la pantalla, tratando de obtener la mayor cantidad de puntos, que se consiguen impactando el proyectil (<strong>lanza</strong>) contra un invasor. La cantidad de proyectiles está <strong>limitada</strong> por programa y cuando se agota se <strong>termina el juego</strong>.</p>
+<div class="exe-fx exe-accordion">
+<h2>1.- Objetos/Personajes</h2>
+<p><strong>Tenemos 4 objetos/personajes:</strong></p>
+<p><strong><img src="img1.1.png" width="345" height="95" alt="" style="display: block; margin-left: auto; margin-right: auto;" /></strong></p>
+<ol>
+<li><span style="color: #ff6600;"><strong>PonchoBot:</strong></span> encargado de defender disparando lanzas contra el invasor que desciende desde el borde superior.</li>
+<li><span style="color: #008000;"><strong>invasor:</strong></span> desciende desde el borde superior hasta el inferior o hasta que un proyectil (lanza) lo toque.</li>
+<li><span style="color: #ff0000;">lanza:</span> es el proyectil que parte desde PonchoBot hacia arriba, buscando tocar (eliminar) un invasor.</li>
+<li><span style="color: #800080;">Presentación:</span> narrativa del juego que se presenta al inicio, indicando cómo disparar (pulsador) y mover (potenciómtro) a <strong><span style="color: #ff6600;">PonchoBot</span>.</strong> </li>
+</ol>
+<p><strong>Y tenemos 3 variables:</strong></p>
+<ol>
+<li><span style="color: #ffffff; background-color: #ff9900;">dificultad:</span> controla la velocidad de descenso de los invasores.</li>
+<li><span style="background-color: #ff9900; color: #ffffff;">disparos:</span> controla la cantidad de disparos que realiza PonchoBot al presionar el pulsador. Cuando llega a cero el juefo finaliza.</li>
+<li><span style="background-color: #ff9900; color: #ffffff;">Puntaje:</span> suma una unidad cada vez que una lanza toca a un invasor</li>
+</ol>
+<h2>2.- PonchoBot</h2>
+<p><strong>Al comienzo</strong> se fija una espera de 7 segundos, tiempo que dura la presentación del juego. Luego se define el estilo de rotación (para que <span style="color: #ff6600;"><strong>PonchoBot</strong></span> no se ponga "patas para arriba"), se fija su ubicación abajo en el centro de la pantalla, se pone el puntaje en cero y se da inicio a un ciclo de repetir hasta que la variable disparos sea menor que 1, o sea se acaben los disparos. Mientras PonchoBot disponga de disparos se deslizará de izquierda a derecha y visceversa, en función del movimiento de la perilla del potenciómetro. También le enviará un mensaje al objeto lanza, que es donde está la lógica de programación encargada del disparo. </p>
+<p><img src="img0.1.png" width="736" height="407" alt="" /></p>
+<h2>3.- Invasor</h2>
+<p>Lo primero que hace, al igual que <span style="color: #ff6600;"><strong>PonchoBot,</strong></span> es esperar los 7 segundos que dura la presentación, para comenzar a producir <strong>clones de sí mismo</strong>. Es decir, a partir de un solo objeto se pueden <strong>replicar objetos gemelos</strong>, mientras se repita el ciclo condicional <span style="background-color: #ff9900; color: #ffffff;"> repetir hasta que disparos sea menor que uno</span>, es decir, hasta que se acaben los disparos. </p>
+<p>Cada <strong>clon</strong> que "<strong>nace</strong>", al comenzar su "<em>vida</em>" (<span style="color: #ffffff; background-color: #ff9900;">al comenzar como clon</span>), se ubica en una posición al azar en el borde superior (y:180) entre los bordes izquierdo (x: -220) y derecho (x:240). Dentro del ciclo condicionado de <span style="background-color: #ff9900; color: #ffffff;">repetir hasta que la <span style="background-color: #3366ff;">posición de y</span> de invasor sea mayor que la del borde inferior (-160)</span><span style="color: #ffffff;"> </span><span style="color: #ffffff;"><span style="color: #000000;">se coloca otra condición, si al <strong>clon de invasor</strong> lo está tocando un <strong>objeto lanza</strong>, entonces se envía un mensaje de tocado al <strong>objeto lanza</strong>, para que incremente los puntos y elimine su clon (<em>lanza también genera clones</em>). Luego oculta y elimina el clon alcanzado por una lanza.</span></span></p>
+<p><span style="color: #ffffff;"><span style="color: #000000;">Si no sucede lo anterior, los clones de invasor siguen cayendo al restarle a <strong>y</strong> la cantidad que se forma de multiplicar el valor de la variable <span style="color: #ffffff; background-color: #ff9900;">dificultad</span><span style="color: #000000;"> por -1. A mayor valor de la variable dificultad, la disminución de<strong> y</strong> será mayor, por lo que será mayor la velocidad de caída de los clones de invasor, haciendo el juego más difícil.</span></span></span></p>
+<p><img src="img2.2.png" width="608" height="475" alt="" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<h2>4.- Lanza</h2>
+<p>Al recibir el mensaje desde el objeto <span style="color: #ff6600;"><strong>PonchoBot</strong></span>, el objeto <strong>lanza</strong> controla si se está <strong>presionando el pulsador (D4=0)</strong> para iniciar el proceso de <strong>lanzar el proyectil o lanza. </strong>Disminuye el número de disparos disponibles, se ubica en la misma posición donde está <span style="color: #ff6600;"><strong>PonchoBot</strong></span> (<em>para dar la sensación de que desde <strong><span style="color: #ff6600;">PonchoBot</span> </strong>sale el disparo</em>) y crea un <strong>clon de lanza</strong>. Al iniciar como clon, se repite el ciclo hasta que el clon llegue al borde superior (<strong>y</strong> &gt;179) incrementando el valor de <strong>y</strong> en 5 unidades. Si queremos que el proyectil <strong>suba más rápido</strong> se debe <strong>incrementar este valor</strong>. Por último, una vez concluído el ciclo repetir, se oculta y se elimina.</p>
+<p><img src="img3.2.png" width="673" height="408" alt="" /></p>
+<h2>5.- Presentación</h2>
+<p>Simplemente <span style="color: #800080;"><strong>mueve el texto</strong></span> ya escrito <strong>como un disfraz</strong> desde la parte inferior de la pantalla hacia arriba (<em>efecto marquesina</em>) durante unos <strong>7 segundos</strong> y luego desaparece.</p>
+<p><img src="img4.1.png" width="283" height="434" alt="" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+</div>
+<p></p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FileAttachIdeviceInc em_iDevice em_iDevice_assignment" id="id48">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Fichero adjunto</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta48_82" class="block iDevice_content">
+<p><span style="color: #800080;"><em>Tomar al programa de ejemplo como base para programar <strong>nuestra propia versión</strong> del juego. Seguramente se le pueden hacer muchas <strong>mejoras y variantes</strong>. </em></span></p>
+<p><a href="https://drive.google.com/uc?export=download&amp;id=1TPAX6QxMMKM4O9u0PY4Vuxu43H5-dsH8" title="[.sb3 - 320 KB]">Descargar programa de ejemplo</a><span class="exe-link-data file-size"> (.sb3 - 320 <abbr title="KiloBytes" lang="en">KB</abbr>)</span></p>
+</div>
+<ul class='exeFileList'></ul></div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="ponchobot_defiende_la_frontera_norte.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><span class="page-counter">Página <strong>7</strong> de <strong>7</strong></span>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

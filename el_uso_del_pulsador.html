@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>El uso del pulsador | El pulsador y el potenciómetro </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Sergio Arciénaga" />
+<meta name="generator" content="eXeLearning 2.9 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site exe-search-bar" id="exe-node-13"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">El pulsador y el potenciómetro</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Inicio</a></li>
+   <li id="active"><a href="el_uso_del_pulsador.html" class="active daddy">El uso del pulsador</a>
+   <ul>
+      <li><a href="pulsador_con_doble_funcin.html" class="no-ch">Pulsador con doble función</a></li>
+   </ul>
+   </li>
+   <li><a href="el_potencimetro.html" class="daddy">El potenciómetro</a>
+   <ul class="other-section">
+      <li><a href="simulando_un_sismgrafo.html" class="no-ch">Simulando un sismógrafo</a></li>
+   </ul>
+   </li>
+   <li><a href="ponchobot_defiende_la_frontera_norte.html" class="daddy">PonchoBot defiende la frontera norte</a>
+   <ul class="other-section">
+      <li><a href="partes_del_juego.html" class="no-ch">Partes del juego</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><span class="page-counter">Página <strong>2</strong> de <strong>7</strong></span> <span class="sep">| </span><a href="pulsador_con_doble_funcin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">El uso del pulsador</h1></header>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id44">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">La resistencia pull up con el pulsador</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta44_127_2" class="block iDevice_content">
+<div class="exe-text"><p><strong>No es conveniente</strong> conectar un <span style="color: #0000ff;"><strong>pulsador</strong></span> directamente a un pin del <strong>Arduino,</strong> ya que puede hacer ingresar "<span style="color: #0000ff;">ruidos</span>" (<em><strong>pulsos falsos</strong></em>) que harán fallar su programación. Por ello, se debe "<span style="color: #ff0000;">proteger</span>" el pin de entrada conectando una <a href="#t352d1513-158b-a8c9-cb76-757daac8ec44" id="link352d1513-158b-a8c9-cb76-757daac8ec44" class="exe-tooltip definition-tt rounded-tt shadowed-tt"><span style="color: #339966;"><strong>resistencia pull up</strong></span></a>. A continuación vemos las conexiones y programación:</p>
+<div class="exe-fx exe-tabs">
+<h2>1°</h2>
+<p style="text-align: center;"><span style="font-size: 14pt;"><strong>Conexión de la resistencia pull up</strong></span></p>
+<p><img src="Arduino_con_pulsador_pull_up.png" width="373" height="242" style="vertical-align: text-top; display: block; margin: 10px auto 10px auto;" />El pulsador usado tiene <strong>dos patitas</strong> (<em>vienen también de cuatro</em>), <strong><span style="color: #800080;">una patita</span></strong> se conecta a una resistencia de <strong>10 kOhm</strong> (<em>llamada pull up</em>) y a su vez también se conecta al <span style="color: #339966;"><strong>pin D4</strong></span> de <strong>Arduino Nano</strong>. El otro extremo de la resistencia se conecta a <span style="color: #ff0000;">5 volt (+)<span style="color: #000000;">. </span></span><strong><span style="color: #800080;">La otra patita</span></strong> del pulsador se conecta únicamente a <strong>Gnd (-)</strong>.</p>
+<p>En la siguiente simulación se puede observar el valor que le llega (<em>ingresa</em>) al <span style="color: #339966;"><strong>pin D4</strong></span> de <strong>Arduino Nano</strong>, cuando el pulsador está sin presionar (<span style="color: #ff0000;"><strong><em>5 volt</em></strong></span>) y presionado (<em><strong>0 volt)</strong></em>:</p>
+<p><img src="Pulsador_con_resistencia_pull_up.gif" alt="" width="353" height="248" style="font-size: 1.05em; display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><span style="font-size: 1.05em;">Estos valores <strong>son muy importantes,</strong> ya que se tienen en cuenta a la hora de la programación con <strong>Pictoblox</strong>. </span></p>
+<h2>2°</h2>
+<p style="text-align: center;"><span style="color: #000000; font-size: 14pt;"><strong>Programación del pulsador</strong></span></p>
+<p style="text-align: left;"><span style="color: #3366ff;"><em><span style="font-size: 18pt;"><strong>Tobi</strong> se puso romántico y quiere que lo mimen un poco</span></em></span></p>
+<p>A parte de <strong>Tobi,</strong> vamos a crear otro personaje/objeto/sprite, que puede ser un corazón tomado de la biblioteca (<strong>Heart</strong>), para que registre cada vez que se presione el <strong>pulsador.</strong></p>
+<table border="1" style="width: 90.8985%;">
+<tbody>
+<tr>
+<td style="width: 38.8764%;"><img src="img2.png" width="282" height="229" alt="" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 52.0225%;">En el objeto/sprite/personaje <strong>Tobi</strong>, simplemente ubicamos el bloque <span style="background-color: #cc99ff; color: #ffffff;"> decir ... por (2) segundos </span>para que el usuario sepa lo que tiene que hacer: <em>Presionar el pulsador para que el objeto corazón cambie de tamaño</em>.</td>
+</tr>
+<tr>
+<td style="width: 38.8764%;"><img src="img3.png" width="365" height="172" alt="" /></td>
+<td style="width: 52.0225%;">En el objeto/sprite/personaje Heart tenemos que leer permananetemente (por siempre) el pin digital <strong>D4</strong> para ver si se presiona (<strong>0</strong>) el pulsador. En caso de ser presionado, el valor que ingresa por el pin es un <strong>0</strong> y entonces se aumenta el tamaño en un 10%, pasando de 50 a 60. Y así sucesivamente, cada vez que se presione el pulsador.</td>
+</tr>
+</tbody>
+</table>
+<h2>3°</h2>
+<p style="text-align: center;"><span style="font-size: 14pt;"><strong>¡ A experimentar !</strong></span></p>
+<p>Se pueden pensar en diferentes acciones que se <strong>"disparen"</strong> a partir de ya saber <strong>"interceptar"</strong> cada pulsación sobre el pulsador:</p>
+<ol>
+<li>Que se prenda el <span style="color: #ff0000;">led rojo</span> conectado al <strong>pin 13.</strong></li>
+<li>Que además de disparar alguna acción o evento (<em>agrandar o disminuir el tamaño de un objeto, prender o apagar un led, etc</em>) emitir un beep por <strong>el buzzer</strong> conectado al <strong>pin D5.</strong></li>
+<li>Que la primera vez que se presione el pulsador se encienda el <span style="color: #ff0000;">led rojo</span> del semáforo, la segunda, el <span style="color: #ffcc00;">led amarillo</span> y la tercera el <span style="color: #339966;">led verde</span> (<em>pueden ir quedando encendido o se pueden ir apagando los anteriores</em>).</li>
+</ol>
+<p style="text-align: center;"><em><span style="color: #ff6600;"><strong><span style="font-size: 18pt;">Manos a la obra !!</span></strong></span></em></p>
+</div>
+<p></p>
+<div id="t352d1513-158b-a8c9-cb76-757daac8ec44" class="exe-tooltip-text">
+<p>Es una resistencia común (generalmente de 10 kOhm) que cumple la función de fijar un valor al pin de entrada (4) cuando el pulsador está sin presionar, para evitar el ingreso de "ruidos" o señales falsas.</p>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><span class="page-counter">Página <strong>2</strong> de <strong>7</strong></span> <span class="sep">| </span><a href="pulsador_con_doble_funcin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>
